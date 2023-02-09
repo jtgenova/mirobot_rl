@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+  </link>
+  <joint name="A motor" type="revolute">
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="0 0 0.075" rpy="0 0 0"/>
+  </joint>
+  <link name="link_1">
+  </link>
+  <joint name="B motor" type="revolute">
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0.000002 0.000001 1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="0.0295 0.048 0.0165" rpy="-2.738075 -1.570794 1.167279"/>
+  </joint>
+  <link name="link_2">
+  </link>
+  <joint name="C motor" type="revolute">
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="0.108 0 -0.0384" rpy="0 0 0"/>
+  </joint>
+  <link name="link_3">
+  </link>
+  <joint name="D motor" type="revolute">
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <axis xyz="0 0.000001 1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="0.0205 0.038 -0.0055" rpy="-1.570795 0 0"/>
+  </joint>
+  <link name="link_4">
+  </link>
+  <joint name="E motor" type="revolute">
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <axis xyz="0 0.000001 1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="-0.00025 0.0015 0.131" rpy="-1.570795 0 0"/>
+  </joint>
+  <link name="link_5">
+  </link>
+  <joint name="F motor" type="revolute">
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <axis xyz="0 0.000001 1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="-0.000125 -0.0283 -0.0018" rpy="-1.570795 0 0"/>
+  </joint>
+  <link name="link_6">
+  </link>
+  <link name="tool">
+  </link>
+  <joint name="link_6_tool_joint" type="fixed">
+    <parent link="link_6"/>
+    <child link="tool"/>
+    <origin xyz="0 0 -0.0225" rpy="3.141593 1.570793 3.141593"/>
+  </joint>
+</robot>
